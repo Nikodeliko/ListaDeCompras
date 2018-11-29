@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-xs-12 col-lg-6 mx-auto">
+  <form method="POST">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    <br>
+    <button class="btn btn-success" type="submit">Crear</button>
+    <a class="btn btn-primary" href="{% url 'user_login' %}">Cancelar</a>
+  </form>
+</div>
+{% endblock content %}

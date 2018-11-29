@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de compras</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  	<meta http-equiv="X-UA-Compatible" content="IE=Edge" >
+    {% block extrahead %}
+  	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+  	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+  	<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fancybox.min.css' %}">
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 header" id="titulo" >
+          <a class="navbar-brand">
+            <h2>Listado de compras</h2>
+          </a>
+        </div>
+        {% block content %}
+        {% endblock content %}
+      	<div class="col-xs-12 pie">
+      		 <p>Emprendimiento Lista de compras</p>
+      	</div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/popper.min.js' %}"></script>
+  	<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+  	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+  	<script src="{% static 'js/bootstrap.js' %}"></script>
+  	<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+
+  </body>
+</html>

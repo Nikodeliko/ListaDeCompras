@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block extrahead %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fancybox.min.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <p class="text-success">Usuario <b>{{user.username}}</b> a iniciado session correctamente!</p>
+      <form class="" method="POST" action="/logout/">
+      {% csrf_token %} 
+        <input type="submit" class="fadeIn fourth" name="button" value="Cerrar Sesion">
+      </form>
+  </div>
+</div>
+{% endblock content %}

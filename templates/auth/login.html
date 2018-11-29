@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block extrahead %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fancybox.min.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+  <form method="POST">
+  {% csrf_token %}
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="Nombre de usuario" required>
+      <input type="password" id="password" class="fadeIn third password" name="password" placeholder="Contraseña" required>
+      <input type="submit" class="fadeIn fourth" name="button" value="Iniciar Sesion">
+      <p class="text-danger">{{error}}</p>
+  </form>
+  </div>
+</div>
+{% endblock content %}
