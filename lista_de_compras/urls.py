@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^usuario/',include(('apps.usuario.urls', 'usuario'), namespace='usuario')),
     url(r'^listas/',include(('apps.listas.urls', 'listas'), namespace='listas')),
     url(r'^producto/',include(('apps.producto.urls', 'producto'), namespace='producto')),
+    url(r'^tienda/',include(('apps.tienda.urls', 'tienda'), namespace='tienda')),
 ]

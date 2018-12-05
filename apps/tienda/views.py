@@ -17,9 +17,9 @@ class ActualizarTiendas(UpdateView):
 
 class CrearTiendas(CreateView):
 	form_class = CrearTiendaForm
-	template_name = 'tienda/crear_tienda.html'
+	template_name = 'tienda/CrearTienda.html'
 	model = Tiendas
-	success_url = '/tienda'
+	success_url = 'productos/CrearProducto.html'
 
 class EliminarTiendas(DeleteView):
 	model = Tiendas

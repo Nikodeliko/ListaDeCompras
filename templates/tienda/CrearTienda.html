@@ -5,7 +5,6 @@
 		<form method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ form.as_p }}
-    <center><a class="btn btn-success" href="{% url 'tienda:crear_tiendas' %}">+</a></center>
 		<button class="btn btn-success" type="submit">Guardar</button>
 		<!-- <a class="btn btn-primary" href="">Volver al Menu Principal</a> -->
 		</form>

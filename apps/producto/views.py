@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from apps.producto.models import Productos
-from apps.producto.views import ProductoForm
+from apps.producto.forms import ProductoForm
 from django.views.generic import TemplateView, ListView, UpdateView, CreateView, DeleteView
 # Create your views here.
 
@@ -17,7 +17,7 @@ class ActualizarProductos(UpdateView):
 
 class CrearProductos(CreateView):
 	form_class = ProductoForm
-	template_name = 'productos/crear_producto.html'
+	template_name = 'productos/CrearProducto.html'
 	model = Productos
 	success_url = 'listas/CrearLista.html'
 

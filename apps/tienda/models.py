@@ -10,5 +10,5 @@ class Tiendas(models.Model):
 	ESTADOS = (('P','Pendiente'),('A','Aceptado'))
 	estado = models.CharField(max_length=1,choices=ESTADOS,null=False, default='P')
 
-	def __unicode__(self):
-		return u'%s' % (self.nombre)
+	def __str__(self):
+		return '{}'.format(self.nombre)

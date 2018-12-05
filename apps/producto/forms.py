@@ -5,6 +5,14 @@ class ProductoForm(forms.ModelForm):
 	class Meta:
 		model = Productos
 
+		fields = [
+		    "nombre",
+			"costo_pre",
+			"costo_real",
+			"notas",
+			"tienda",
+		]
+
 		widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
 			'costo_pre': forms.NumberInput(attrs={'class': 'form-control'}),

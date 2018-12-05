@@ -8,3 +8,6 @@ class Productos(models.Model):
     costo_real = models.IntegerField()
     notas = models.CharField(max_length=300)
     tienda = models.ManyToManyField(Tiendas)
+
+    def __str__(self):
+        return '{}'.format(self.nombre)

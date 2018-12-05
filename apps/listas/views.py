@@ -11,6 +11,10 @@ class CrearLista(CreateView):
 	template_name = 'listas/CrearLista.html'
 	success_url = reverse_lazy('listas:crear_listas')
 
+	def __init__(self, Perfil, *args, **kwargs):
+		self.user = user
+		super(RSVPForm, self).__init__(*args, **kwargs)
+
 class ListasCompras(ListView):
     template_name = 'listas/ListarListas.html'
     model = ListaCompras
