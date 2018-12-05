@@ -1,19 +1,14 @@
 from django import forms
-from .model import Productos
+from apps.producto.models import Productos
 
-class ProductForm(forms.ModelForm):
-    class Meta:
-        model = Productos
-        fields = [
-            'nombre',
-            'costo_presu',
-            'costo_real',
-            'notas',
-        ]
+class ProductoForm(forms.ModelForm):
+	class Meta:
+		model = Productos
 
-        label= {
-            'nombre': 'Nombre del producto',
-            'costo_presu': 'Costo Estimado',
-            'costo_real': 'Costo Real',
-            'notas': 'comentario adicional',
-        }
+		widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+			'costo_pre': forms.NumberInput(attrs={'class': 'form-control'}),
+			'costo_real': forms.NumberInput(attrs={'class': 'form-control'}),
+            'notas': forms.Textarea(attrs={'class': 'form-control', 'rows': '6' }),
+			'tienda': forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}),
+		}

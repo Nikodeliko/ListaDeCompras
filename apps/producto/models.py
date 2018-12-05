@@ -1,9 +1,10 @@
 from django.db import models
-#from tienda.models impor Tiendas
-# Create your models here.
+from apps.tienda.models import Tiendas
 
-#class Productos(models.Model):
-#    nombre = models.CharField(null=False)
-#    costo_presu = models.IntegerField()
-#    costo_real = models.IntegerField()
-#    notas = models.CharField()
+# Create your models here.
+class Productos(models.Model):
+    nombre = models.CharField(unique=True, null=False,max_length=40)
+    costo_pre = models.IntegerField()
+    costo_real = models.IntegerField()
+    notas = models.CharField(max_length=300)
+    tienda = models.ManyToManyField(Tiendas)

@@ -1,7 +1,5 @@
-from django.urls import path
-from .views import *
-
-
+from django.conf.urls import url
+from apps.usuario.views import *
 urlpatterns = [
-    path('registrar', usuario_add, name="agregar_usuario")
+    url(r'^registrar$', usuario_add, name='agregar_usuario'),
 ]

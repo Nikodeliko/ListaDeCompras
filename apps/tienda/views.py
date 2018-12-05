@@ -1,20 +1,27 @@
 from django.shortcuts import render
-
+from .models import Tiendas
+from .forms import CrearTiendaForm,ActualizarTiendaForm
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 # Create your views here.
 
-"""def tienda_add(request):
-    context = {}
-    if request.method=="POST":
-        tienda_form = TiendaForm(request.POST)
-        context['tienda_form'] = tienda_form
-        if tienda_form.is_valid():
-            self.nombre = self.nombre.lower()
-            u = tienda_form.save()
-            return HttpResponseRedirect(reverse('employee_list'))
-        else:
-            return render(request, 'usuario/registro.html', context)
-    else:
-        tienda_form= TiendaForm()
-        context['tienda_form'] = tienda_form
-        return render(request, 'usuario/registro.html', context)
-"""
+class ListarTiendas(ListView):
+	context_object_name = 'tienda'
+	model = Tiendas
+	template_name = 'tienda/lista_tienda.html'
+
+class ActualizarTiendas(UpdateView):
+	form_class = ActualizarTiendaForm
+	template_name = 'tienda/actualizar_tienda.html'
+	model = Tiendas
+	success_url='/tienda'
+
+class CrearTiendas(CreateView):
+	form_class = CrearTiendaForm
+	template_name = 'tienda/crear_tienda.html'
+	model = Tiendas
+	success_url = '/tienda'
+
+class EliminarTiendas(DeleteView):
+	model = Tiendas
+	success_url='/tienda'
+	template_name = 'tienda/eliminar_tienda.html'

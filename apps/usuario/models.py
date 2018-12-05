@@ -6,8 +6,8 @@ from django.dispatch import receiver
 class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete="models.CASCADE")
 
-    def __unicode__(self):
-        return self.user.username
+    def __str__(self):
+        return '{}'.format(self.user.username)
 
 @receiver(post_save, sender=User)
 def CrearPerfilUsuario(sender, instance=None, created=False, **kwargs):

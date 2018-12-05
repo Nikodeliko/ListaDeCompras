@@ -42,8 +42,8 @@ def user_login(request):
 def success(request):
     context = {}
     context['user'] = request.user
-    return render(request, "auth/success.html", context)
-    
+    return render(request, "listas/index.html", context)
+
 @login_required(login_url="/login/")
 def user_logout(request):
     if request.method == "POST":
