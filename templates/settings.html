@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <nav>
+  <h1>Ajustes</h1>
+  <h3>Facebook</h3>
+  {% if facebook_login %}
+    <p>Connected as <a href="https://facebook.com/{{ facebook_login.extra_data.id }}/" target="_blank">{{ facebook_login.extra_data.id }}</a></p>
+    {% if can_disconnect %}
+      <form method="post" action="{% url 'social:disconnect' 'facebook' %}">
+        {% csrf_token %}
+        <button type="submit">Desconectarse de Facebook</button>
+      </form>
+    {% endif %}
+  {% else %}
+    <a href="{% url 'social:begin' 'facebook' %}">Conectarse con Facebook</a>
+  {% endif %}
+  </nav>
+{% endblock %}

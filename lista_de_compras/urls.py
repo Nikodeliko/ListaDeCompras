@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from apps.usuario.views import user_login, success, user_logout
 from django.conf.urls import url, include
-from .views import index
+from .views import index, base, settings
+from lista_de_compras import views as core_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,7 @@ urlpatterns = [
     path('login/', user_login, name="user_login"),
     path('success/', success, name="user_success"),
     path('logout/', user_logout, name="user_logout"),
+    path('base/',base, name="base"),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),  # <--
+    url(r'^settings/$', settings, name='settings'),
 ]
