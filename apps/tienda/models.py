@@ -2,4 +2,5 @@ from django.db import models
 
 # Create your models here.
 
-#class Tiendas(models.Model):
+# class Tiendas(models.Model):
+	

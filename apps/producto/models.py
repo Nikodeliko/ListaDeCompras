@@ -2,8 +2,9 @@ from django.db import models
 #from tienda.models impor Tiendas
 # Create your models here.
 
-#class Productos(models.Model):
-#    nombre = models.CharField(null=False)
-#    costo_presu = models.IntegerField()
-#    costo_real = models.IntegerField()
-#    notas = models.CharField()
+class Producto(models.Model):
+	Nombre = models.CharField(max_length=40)
+	Costo_p = models.DecimalField(max_digits=5, decimal_places=2)
+	Costo_real = models.DecimalField(max_digits=3, decimal_places=2)
+	tienda = models.CharField(max_length=40)
+	notas = models.CharField(max_length=200)

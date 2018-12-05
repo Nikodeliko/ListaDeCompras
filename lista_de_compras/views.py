@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response, render
 from social_django.models import UserSocialAuth
 
+
 def index(request):
 	return render_to_response("index.html")
 
@@ -34,3 +35,7 @@ def settings(request):
         'facebook_login': facebook_login,
         'can_disconnect': can_disconnect
     })
+
+
+def productos(request):
+    return render_to_response("Productos.html")
